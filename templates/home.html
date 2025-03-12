@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Job postings website</title>
+    <title>{{company_name}} website</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -18,9 +18,9 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center mt-2 mb-4">Pranav Job postings</h1>
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Job postings</h1>
       <img class="img-fluid" src="../images/team.jpg" id="banner" />
-      <h2 class="text-center mt-2 mb-4">About our company</h2>
+      <h2 class="text-center mt-2 mb-4">About {{company_name}}</h2>
       <p class="lead">
         Quoniam igitur nihil carentia per se ipsa potest esse bonum, sapientia
         quoque nihil erit bonum per se ipsa, sed per quem alium rem quaerendam
@@ -38,9 +38,13 @@
         utilitate, non ex voluptate.
       </p>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-      <p class="lead">Display Openings here</p>
+      <div>{% for job in jobs%}
+           {% include 'jobitems.html'%} 
+           {%endfor%}
+      </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Apply Here</button>
+        <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright@2025</p>
       </div>
     </div>
     <script src="" async defer></script>
