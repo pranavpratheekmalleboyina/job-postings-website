@@ -17,36 +17,50 @@
     />
   </head>
   <body>
+    {% include 'navbar.html' %}
     <div class="container">
-      <h1 class="text-center mt-2 mb-4">Welcome To {{company_name}} </h1>
-      <img id="banner" class="img-fluid" src="../static/images/office.jpg" >
-      <h2 class="text-center mt-2 mb-4">About {{company_name}}</h2>
-      <p class="lead">
-        Quoniam igitur nihil carentia per se ipsa potest esse bonum, sapientia
-        quoque nihil erit bonum per se ipsa, sed per quem alium rem quaerendam
-        iudicabit, id erit illi bonum, non illa res. Quod si ita se habeat, non
-        possit beatam vitam virtus efficere; alia quaedam igitur sunt bona
-        praeter sapientiam. Quodsi nihil aliud possit esse bonum, virtus ipsa
-        per se erit summum bonum, nec quicquam aliud praeter illam expetendum
-        erit. Sed haec omnia refutata et profligata sunt paulo ante, cum
-        ostenderemus non posse virtutem ipsam per se beatam vitam efficere, nisi
-        accesserit ad eam perpetua rerum prosperitas. Nam si propter voluptatem,
-        quae maxima est secundum Epicurum, omnia eligenda sunt, et si nihil
-        umquam ab eo dictum est, quod non ad voluptatem referretur, non
-        intellego cur non de virtutibus eadem dicat, cum ipsa per se nihil aliud
-        quam honesta sit et tantum habeat momenti quantum iudicari potest ex
-        utilitate, non ex voluptate.
-      </p>
-      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-      <div>{% for job in jobs%}
-           {% include 'jobitems.html'%} 
-           {%endfor%}
+      <img id="banner" class="img-fluid" src="../static/images/slogan.jpg" />
+      <h1 class="text-center mt-2 mb-4">{{company_name}}</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="lead">
+            Quoniam igitur nihil carentia per se ipsa potest esse bonum,
+            sapientia quoque nihil erit bonum per se ipsa, sed per quem alium
+            rem quaerendam iudicabit, id erit illi bonum, non illa res. Quod si
+            ita se habeat, non possit beatam vitam virtus efficere; alia quaedam
+            igitur sunt bona praeter sapientiam. Quodsi nihil aliud possit esse
+            bonum, virtus ipsa per se erit summum bonum, nec quicquam aliud
+            praeter illam expetendum erit. Sed haec omnia refutata et profligata
+            sunt paulo ante, cum ostenderemus non posse virtutem ipsam per se
+            beatam vitam efficere, nisi accesserit ad eam perpetua rerum
+            prosperitas. Nam si propter voluptatem, quae maxima est secundum
+            Epicurum, omnia eligenda sunt, et si nihil umquam ab eo dictum est,
+            quod non ad voluptatem referretur, non intellego cur non de
+            virtutibus eadem dicat, cum ipsa per se nihil aliud quam honesta sit
+            et tantum habeat momenti quantum iudicari potest ex utilitate, non
+            ex voluptate.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img
+            class="img-fluid"
+            src="/static/images/office.jpg"
+            style="height: 300px"
+          />
+        </div>
       </div>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>{% for job in jobs%} {% include 'jobitems.html'%} {%endfor%}</div>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-3">Copyright@2025</p>
+        <a
+          type="button"
+          href="mailto:hello@pranav.ai?subject=Questions%20regarding%20company%20policy&body=Name%20%3A%20%3Cyour_name%3E%0D%0AQuestion%20%3A%20%3Cquestion%3E"
+          class="btn btn-primary btn-lg"
+          >Contact Us</a
+        >
       </div>
     </div>
+    {% include 'footer.html' %}
     <script src="" async defer></script>
   </body>
 </html>
